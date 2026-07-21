@@ -1,131 +1,53 @@
-// Package log provides a global logger for zerolog.
 package log
 
 import (
 	"context"
-	"fmt"
 	"io"
 	"os"
 
 	"github.com/rs/zerolog"
 )
 
-// Logger is the global logger.
 var Logger = zerolog.New(os.Stderr).With().Timestamp().Logger()
 
-// Output duplicates the global logger and sets w as its output.
-func Output(w io.Writer) zerolog.Logger {
-	return Logger.Output(w)
-}
+func Output(w io.Writer) zerolog.Logger { _ = "STUB: not implemented"; return *new(zerolog.Logger) }
 
-// With creates a child logger with the field added to its context.
-func With() zerolog.Context {
-	return Logger.With()
-}
+func With() zerolog.Context { _ = "STUB: not implemented"; return *new(zerolog.Context) }
 
-// Level creates a child logger with the minimum accepted level set to level.
 func Level(level zerolog.Level) zerolog.Logger {
-	return Logger.Level(level)
+	_ = "STUB: not implemented"
+	return *new(zerolog.Logger)
 }
 
-// Sample returns a logger with the s sampler.
 func Sample(s zerolog.Sampler) zerolog.Logger {
-	return Logger.Sample(s)
+	_ = "STUB: not implemented"
+	return *new(zerolog.Logger)
 }
 
-// Hook returns a logger with the h Hook.
-func Hook(h zerolog.Hook) zerolog.Logger {
-	return Logger.Hook(h)
-}
+func Hook(h zerolog.Hook) zerolog.Logger { _ = "STUB: not implemented"; return *new(zerolog.Logger) }
 
-// Err starts a new message with error level with err as a field if not nil or
-// with info level if err is nil.
-//
-// You must call Msg on the returned event in order to send the event.
-func Err(err error) *zerolog.Event {
-	return Logger.Err(err)
-}
+func Err(err error) *zerolog.Event { _ = "STUB: not implemented"; return nil }
 
-// Trace starts a new message with trace level.
-//
-// You must call Msg on the returned event in order to send the event.
-func Trace() *zerolog.Event {
-	return Logger.Trace()
-}
+func Trace() *zerolog.Event { _ = "STUB: not implemented"; return nil }
 
-// Debug starts a new message with debug level.
-//
-// You must call Msg on the returned event in order to send the event.
-func Debug() *zerolog.Event {
-	return Logger.Debug()
-}
+func Debug() *zerolog.Event { _ = "STUB: not implemented"; return nil }
 
-// Info starts a new message with info level.
-//
-// You must call Msg on the returned event in order to send the event.
-func Info() *zerolog.Event {
-	return Logger.Info()
-}
+func Info() *zerolog.Event { _ = "STUB: not implemented"; return nil }
 
-// Warn starts a new message with warn level.
-//
-// You must call Msg on the returned event in order to send the event.
-func Warn() *zerolog.Event {
-	return Logger.Warn()
-}
+func Warn() *zerolog.Event { _ = "STUB: not implemented"; return nil }
 
-// Error starts a new message with error level.
-//
-// You must call Msg on the returned event in order to send the event.
-func Error() *zerolog.Event {
-	return Logger.Error()
-}
+func Error() *zerolog.Event { _ = "STUB: not implemented"; return nil }
 
-// Fatal starts a new message with fatal level. The os.Exit(1) function
-// is called by the Msg method.
-//
-// You must call Msg on the returned event in order to send the event.
-func Fatal() *zerolog.Event {
-	return Logger.Fatal()
-}
+func Fatal() *zerolog.Event { _ = "STUB: not implemented"; return nil }
 
-// Panic starts a new message with panic level. The message is also sent
-// to the panic function.
-//
-// You must call Msg on the returned event in order to send the event.
-func Panic() *zerolog.Event {
-	return Logger.Panic()
-}
+func Panic() *zerolog.Event { _ = "STUB: not implemented"; return nil }
 
-// WithLevel starts a new message with level.
-//
-// You must call Msg on the returned event in order to send the event.
-func WithLevel(level zerolog.Level) *zerolog.Event {
-	return Logger.WithLevel(level)
-}
+func WithLevel(level zerolog.Level) *zerolog.Event { _ = "STUB: not implemented"; return nil }
 
-// Log starts a new message with no level. Setting zerolog.GlobalLevel to
-// zerolog.Disabled will still disable events produced by this method.
-//
-// You must call Msg on the returned event in order to send the event.
-func Log() *zerolog.Event {
-	return Logger.Log()
-}
+func Log() *zerolog.Event { _ = "STUB: not implemented"; return nil }
 
-// Print sends a log event using debug level and no extra field.
-// Arguments are handled in the manner of fmt.Print.
-func Print(v ...interface{}) {
-	Logger.Debug().CallerSkipFrame(1).Msg(fmt.Sprint(v...))
-}
+func Print(v ...interface{}) { _ = "STUB: not implemented"; return }
 
-// Printf sends a log event using debug level and no extra field.
-// Arguments are handled in the manner of fmt.Printf.
-func Printf(format string, v ...interface{}) {
-	Logger.Debug().CallerSkipFrame(1).Msgf(format, v...)
-}
+func Printf(format string, v ...interface{}) { _ = "STUB: not implemented"; return }
 
-// Ctx returns the Logger associated with the ctx. If no logger
-// is associated, a disabled logger is returned.
-func Ctx(ctx context.Context) *zerolog.Logger {
-	return zerolog.Ctx(ctx)
-}
+func Ctx(ctx context.Context) *zerolog.Logger { _ = "STUB: not implemented"; return nil }

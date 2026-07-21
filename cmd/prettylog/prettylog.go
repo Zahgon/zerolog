@@ -1,8 +1,6 @@
 package main
 
 import (
-	"bufio"
-	"errors"
 	"flag"
 	"fmt"
 	"io"
@@ -12,27 +10,9 @@ import (
 	"github.com/rs/zerolog"
 )
 
-func isInputFromPipe() bool {
-	fileInfo, _ := os.Stdin.Stat()
-	return fileInfo.Mode()&os.ModeCharDevice == 0
-}
+func isInputFromPipe() bool { _ = "STUB: not implemented"; return false }
 
-func processInput(reader io.Reader, writer io.Writer) error {
-	scanner := bufio.NewScanner(reader)
-	for scanner.Scan() {
-		bytesToWrite := scanner.Bytes()
-		_, err := writer.Write(bytesToWrite)
-		if err != nil {
-			if errors.Is(err, io.EOF) {
-				break
-			}
-
-			fmt.Printf("%s\n", bytesToWrite)
-		}
-	}
-
-	return scanner.Err()
-}
+func processInput(reader io.Reader, writer io.Writer) error { _ = "STUB: not implemented"; return nil }
 
 func main() {
 	timeFormats := map[string]string{
@@ -60,7 +40,7 @@ func main() {
 		_ = processInput(os.Stdin, writer)
 	} else if flag.NArg() >= 1 {
 		for _, filename := range flag.Args() {
-			// Scan each line from filename and write it into writer
+
 			reader, err := os.Open(filename)
 			if err != nil {
 				fmt.Printf("%s open: %v", filename, err)
