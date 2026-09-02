@@ -8,23 +8,8 @@ import (
 )
 
 func AsLogObjectMarshalers[T LogObjectMarshaler](objs []T) []LogObjectMarshaler {
-	if objs == nil {
-		return nil
-	}
-	s := make([]LogObjectMarshaler, len(objs))
-	for i, v := range objs {
-		s[i] = v
-	}
-	return s
+	_ = "STUB: not implemented"
+	return nil
 }
 
-func AsStringers[T fmt.Stringer](objs []T) []fmt.Stringer {
-	if objs == nil {
-		return nil
-	}
-	s := make([]fmt.Stringer, len(objs))
-	for i, v := range objs {
-		s[i] = v
-	}
-	return s
-}
+func AsStringers[T fmt.Stringer](objs []T) []fmt.Stringer { _ = "STUB: not implemented"; return nil }
